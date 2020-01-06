@@ -1,4 +1,5 @@
-﻿using Membership.DataAccess;
+﻿using Membership.Commands.Membership;
+using Membership.DataAccess;
 using Membership.Models;
 using Membership.Queries.Actors;
 using Membership.Queries.Sales;
@@ -16,6 +17,23 @@ namespace Membership
     static void Main(string[] args)
     {
           var db = new CommandRunner("dvds");
+
+            var q = new RegisterCommand(db);
+            q.Email = "semail@mailer.com";
+            q.Password = "password";
+            q.Confirmation = "password";
+            q.First = "Nick";
+            q.Last = "Shoup";
+            var result = q.Execute();
+            Console.WriteLine(result.Message, result.NewUserId, result.Status);
+
+
+            var qAuth = new AuthenticateCommand(db);
+            qAuth.ProviderKey = "semail@mailer.com";
+            qAuth.ProviderValue = "password";
+
+            var authResult = qAuth.Execute();
+            Console.WriteLine(authResult.Message, authResult.UserID);
 
             var query = new RawSalesByDate(db);
             query.Year = 2007;
@@ -40,6 +58,8 @@ namespace Membership
             {
                // Console.WriteLine(film.title);
             }
+
+
 
             //var cmd = db.BuildCommand("insert into actor(first_name, last_name, last_update) values (@0, @1, @2)", "Nick", "Shoup", DateTime.Now);
 

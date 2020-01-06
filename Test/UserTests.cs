@@ -16,7 +16,6 @@ namespace Test
             Helpers.Loader.ReloadDb();
             db = new CommandRunner("dvds");
             var userQuery = new UserQuery(db) { Email = "test@text.com" };
-            userQuery.ID = 1;
             user = userQuery.Execute();
             //user = db.ExecuteSingle<User>("select * from users;");
         }
