@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\Actors\AddBatchOfActors.cs" />
+    <Compile Include="Commands\Membership\AuthenticateCommand.cs" />
+    <Compile Include="Commands\Membership\RegisterCommand.cs" />
     <Compile Include="DataAccess\CommandRunner.cs" />
     <Compile Include="DataAccess\Extensions.cs" />
     <Compile Include="DataAccess\ICommandRunner.cs" />
@@ -69,7 +71,10 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Commands\Sales\" />
+    <Folder Include="Commands\Users\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
