@@ -155,3 +155,4 @@ $RECYCLE.BIN/
 
 # Generated NuGet packages
 *.nupkg
+/.vs/membership/v16
