@@ -41,6 +41,14 @@ namespace Membership.Models
 
   public class User
   {
+
+    public User()
+    {
+        this.Notes = new List<Note>();
+        this.Logins = new List<Login>();
+        this.Logs = new List<Log>();
+    }
+    
     public long ID { get; set; }
     public string Email { get; set; }
     public string First { get; set; }
@@ -57,12 +65,7 @@ namespace Membership.Models
     public List<Log> Logs { get; set; }
     public List<Login> Logins { get; set; }
 
-        public User()
-    {
-      //this.Notes = new List<Note>();
-      //this.Logins = new List<Login>();
-      //this.Logs = new List<Log>();
-    }
+
 
   }
 }

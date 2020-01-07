@@ -135,4 +135,4 @@ create table user_documents(
 
 
 --crypto in the DB yo
-create extension pgcrypto
+--create extension pgcrypto
